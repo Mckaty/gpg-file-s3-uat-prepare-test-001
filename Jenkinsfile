@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Prepare GPG UAT Test') {
             steps {
-                aws s3 mv s3://poc-gpg-bucket-uat-142603072023/archive/ s3://poc-gpg-bucket-uat-142603072023/in/ --recursive --exclude "*" --include "*.pgp"
+                sh 'aws s3 mv s3://poc-gpg-bucket-uat-142603072023/archive/ s3://poc-gpg-bucket-uat-142603072023/in/ --recursive --exclude "*" --include "*.pgp" '
             }
         }
 
